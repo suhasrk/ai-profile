@@ -1,0 +1,70 @@
+<section class="hero-section">
+  <canvas #neuralCanvas class="neural-canvas"></canvas>
+
+  <div #glow class="mouse-glow"></div>
+
+  <div class="hero-layout">
+    <div class="hero-left">
+      <div class="hero-content">
+        <div class="hero-tagline">
+          <span class="tagline-bracket">[</span>
+          <span class="tagline-text">system_initialized</span>
+          <span class="tagline-bracket">]</span>
+        </div>
+
+        <h1 class="hero-title">
+          <span class="hero-name">Suhas</span>
+          <span class="hero-name-accent">RK</span>
+          <div class="hero-tagline-text">IN THE TRAINING LOOP</div>
+        </h1>
+
+        <p class="hero-subtitle">
+          Building autonomous systems,<br />
+          observability-driven AI,<br />
+          and multi-agent workflows.
+        </p>
+
+        <div class="hero-ctas">
+          <button class="hero-cta hero-cta-primary" (click)="scrollToProjects()">
+            <span class="cta-dot"></span>
+            Explore AI Projects
+          </button>
+          <button class="hero-cta hero-cta-secondary" (click)="scrollToLogs()">
+            <span class="cta-arrow">→</span>
+            View Research Logs
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="console-terminal">
+        <div class="terminal-bar">
+          <div class="term-dot term-dot-red"></div>
+          <div class="term-dot term-dot-yellow"></div>
+          <div class="term-dot term-dot-green"></div>
+          <span class="term-title">ai-agent@system:~$</span>
+        </div>
+        <div class="terminal-body" #terminalBody>
+          @for (line of lines; track line + '-' + $index + '-' + cycleCount) {
+            <div class="terminal-line" [class.terminal-anomaly]="line.includes('anomaly')" [class.terminal-success]="line.includes('complete') || line.includes('OPERATIONAL')">
+              @if (line.startsWith('>')) {
+                <span class="line-prompt">></span>
+              }
+              <span class="line-content">{{ line }}</span>
+            </div>
+          }
+          <div class="terminal-cursor"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-scroll-hint">
+    <span class="scroll-text">SCROLL</span>
+    <div class="scroll-line"></div>
+  </div>
+
+  <div class="hero-aurora aurora-top-left"></div>
+  <div class="hero-aurora aurora-bottom-right"></div>
+</section>

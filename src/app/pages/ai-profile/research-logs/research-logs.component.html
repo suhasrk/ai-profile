@@ -1,0 +1,29 @@
+<section class="logs-section">
+  <div class="logs-container">
+    <div class="logs-header">
+      <span class="section-label">Research Notes</span>
+      <h2 class="section-title">ENGINEERING<br />LOGS</h2>
+    </div>
+
+    <div class="logs-list">
+      @for (log of logs; track log.title) {
+        <article class="log-entry">
+          <div class="log-glow-bar"></div>
+          <div class="log-content">
+            <div class="log-category">{{ log.category }}</div>
+            <h3 class="log-title">{{ log.title }}</h3>
+            <p class="log-description">{{ log.description }}</p>
+            <div class="log-footer">
+              <span class="log-reading-time">{{ log.readingTime }}</span>
+              <div class="log-tags">
+                @for (tag of log.tags; track tag) {
+                  <span class="log-tag">{{ tag }}</span>
+                }
+              </div>
+            </div>
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,95 @@
+<section class="architecture-section">
+  <div class="arch-container">
+    <div class="arch-header">
+      <span class="section-label">Systems Thinking</span>
+      <h2 class="section-title">HOW I BUILD<br />AI SYSTEMS</h2>
+      <p class="arch-desc">
+        A generalized architecture pattern I use for building reliable, observable agentic systems.
+      </p>
+    </div>
+
+    <div class="arch-flow">
+      <div class="arch-node arch-node-planner">
+        <div class="arch-node-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+            <circle cx="12" cy="12" r="3"/>
+          </svg>
+        </div>
+        <span class="arch-node-label">Planner Agent</span>
+        <span class="arch-node-desc">Decomposes complex tasks</span>
+        <div class="arch-node-glow"></div>
+      </div>
+
+      <div class="arch-connector">
+        <div class="arch-connector-line"></div>
+        <div class="arch-connector-arrow">→</div>
+      </div>
+
+      <div class="arch-node arch-node-workers">
+        <div class="arch-node-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/>
+          </svg>
+        </div>
+        <span class="arch-node-label">Execution Workers</span>
+        <span class="arch-node-desc">Parallel task execution</span>
+        <div class="arch-node-glow"></div>
+      </div>
+
+      <div class="arch-connector">
+        <div class="arch-connector-line"></div>
+        <div class="arch-connector-arrow">→</div>
+      </div>
+
+      <div class="arch-node arch-node-evaluator">
+        <div class="arch-node-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <polyline points="9 11 12 14 22 4"/>
+            <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
+          </svg>
+        </div>
+        <span class="arch-node-label">Shared Evaluator</span>
+        <span class="arch-node-desc">Synthesizes & validates</span>
+        <div class="arch-node-glow"></div>
+      </div>
+
+      <div class="arch-connector">
+        <div class="arch-connector-line"></div>
+        <div class="arch-connector-arrow">→</div>
+      </div>
+
+      <div class="arch-node arch-node-memory">
+        <div class="arch-node-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="2" y="2" width="20" height="8" rx="2" ry="2"/>
+            <rect x="2" y="14" width="20" height="8" rx="2" ry="2"/>
+            <line x1="6" y1="6" x2="6.01" y2="6"/>
+            <line x1="6" y1="18" x2="6.01" y2="18"/>
+          </svg>
+        </div>
+        <span class="arch-node-label">Memory + Observability</span>
+        <span class="arch-node-desc">Persistence & telemetry</span>
+        <div class="arch-node-glow"></div>
+      </div>
+
+      <div class="arch-connector">
+        <div class="arch-connector-line"></div>
+        <div class="arch-connector-arrow">→</div>
+      </div>
+
+      <div class="arch-node arch-node-human">
+        <div class="arch-node-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+        </div>
+        <span class="arch-node-label">Human Approval Layer</span>
+        <span class="arch-node-desc">Guardrails & escalation</span>
+        <div class="arch-node-glow"></div>
+      </div>
+    </div>
+  </div>
+</section>

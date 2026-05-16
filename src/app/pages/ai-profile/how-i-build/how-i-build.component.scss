@@ -1,0 +1,222 @@
+.architecture-section {
+  padding: 120px 24px;
+  background: #0a0a0a;
+  position: relative;
+  overflow: hidden;
+}
+
+.arch-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.arch-header {
+  margin-bottom: 60px;
+}
+
+.arch-desc {
+  font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  font-size: 1rem;
+  color: #888888;
+  margin-top: 16px;
+  max-width: 500px;
+  line-height: 1.6;
+}
+
+.arch-flow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  overflow-x: auto;
+  padding: 40px 20px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 240, 255, 0.3) transparent;
+}
+
+.arch-node {
+  position: relative;
+  min-width: 200px;
+  max-width: 200px;
+  padding: 24px 20px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  overflow: visible;
+  opacity: 0;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+.arch-node:hover {
+  transform: scale(1.05);
+  z-index: 10;
+}
+
+.arch-node {
+  position: relative;
+  min-width: 180px;
+  max-width: 180px;
+  padding: 20px 16px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  overflow: hidden;
+  opacity: 0;
+  flex-shrink: 0;
+}
+
+.arch-node-planner {
+  background: rgba(0, 240, 255, 0.03);
+  border: 1px solid rgba(0, 240, 255, 0.15);
+}
+
+.arch-node-workers {
+  background: rgba(59, 130, 246, 0.03);
+  border: 1px solid rgba(59, 130, 246, 0.15);
+}
+
+.arch-node-evaluator {
+  background: rgba(180, 77, 255, 0.03);
+  border: 1px solid rgba(180, 77, 255, 0.15);
+}
+
+.arch-node-memory {
+  background: rgba(0, 255, 136, 0.03);
+  border: 1px solid rgba(0, 255, 136, 0.15);
+}
+
+.arch-node-human {
+  background: rgba(255, 180, 0, 0.03);
+  border: 1px solid rgba(255, 180, 0, 0.15);
+}
+
+.arch-node:hover {
+  transform: scale(1.03);
+}
+
+.arch-node-planner:hover {
+  box-shadow: 0 0 30px rgba(0, 240, 255, 0.1);
+  border-color: rgba(0, 240, 255, 0.3);
+}
+
+.arch-node-workers:hover {
+  box-shadow: 0 0 30px rgba(59, 130, 246, 0.1);
+  border-color: rgba(59, 130, 246, 0.3);
+}
+
+.arch-node-evaluator:hover {
+  box-shadow: 0 0 30px rgba(180, 77, 255, 0.1);
+  border-color: rgba(180, 77, 255, 0.3);
+}
+
+.arch-node-memory:hover {
+  box-shadow: 0 0 30px rgba(0, 255, 136, 0.1);
+  border-color: rgba(0, 255, 136, 0.3);
+}
+
+.arch-node-human:hover {
+  box-shadow: 0 0 30px rgba(255, 180, 0, 0.1);
+  border-color: rgba(255, 180, 0, 0.3);
+}
+
+.arch-node-glow {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.arch-node-planner .arch-node-glow {
+  background: radial-gradient(ellipse at 50% 50%, rgba(0, 240, 255, 0.06), transparent);
+}
+
+.arch-node-workers .arch-node-glow {
+  background: radial-gradient(ellipse at 50% 50%, rgba(59, 130, 246, 0.06), transparent);
+}
+
+.arch-node-evaluator .arch-node-glow {
+  background: radial-gradient(ellipse at 50% 50%, rgba(180, 77, 255, 0.06), transparent);
+}
+
+.arch-node-memory .arch-node-glow {
+  background: radial-gradient(ellipse at 50% 50%, rgba(0, 255, 136, 0.06), transparent);
+}
+
+.arch-node-human .arch-node-glow {
+  background: radial-gradient(ellipse at 50% 50%, rgba(255, 180, 0, 0.06), transparent);
+}
+
+.arch-node:hover .arch-node-glow {
+  opacity: 1;
+}
+
+.arch-node-icon {
+  margin-bottom: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.arch-node-planner .arch-node-icon { color: #00f0ff; }
+.arch-node-workers .arch-node-icon { color: #3b82f6; }
+.arch-node-evaluator .arch-node-icon { color: #b44dff; }
+.arch-node-memory .arch-node-icon { color: #00ff88; }
+.arch-node-human .arch-node-icon { color: #ffb400; }
+
+.arch-node-label {
+  font-family: 'Space Grotesk', 'Inter', ui-sans-serif, system-ui, sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 4px;
+  position: relative;
+  z-index: 1;
+}
+
+.arch-node-desc {
+  font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.8rem;
+  color: #888888;
+  position: relative;
+  z-index: 1;
+}
+
+.arch-connector {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 4px;
+  width: 32px;
+  flex-shrink: 0;
+}
+
+.arch-connector-line {
+  width: 16px;
+  height: 2px;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+  transform-origin: left center;
+}
+
+.arch-connector-arrow {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 0.8rem;
+  color: #555555;
+  line-height: 1;
+}
+
+@media (max-width: 768px) {
+  .architecture-section {
+    padding: 80px 20px;
+  }
+
+  .arch-node {
+    max-width: 100%;
+  }
+}

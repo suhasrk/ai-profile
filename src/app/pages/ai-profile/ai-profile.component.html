@@ -1,0 +1,27 @@
+<app-hero />
+<div class="tab-container">
+  <div class="tab-toggle">
+    <button 
+      class="tab-btn" 
+      [class.active]="activeTab === 'identity'" 
+      (click)="setActiveTab('identity')">
+      SYSTEM IDENTITY
+    </button>
+    <button 
+      class="tab-btn" 
+      [class.active]="activeTab === 'architecture'" 
+      (click)="setActiveTab('architecture')">
+      HOW I BUILD SYSTEMS
+    </button>
+  </div>
+</div>
+@if (activeTab === 'identity') {
+  <app-ai-identity />
+}
+@if (activeTab === 'architecture') {
+  <app-how-i-build />
+}
+<app-ai-projects />
+<app-hf-spaces />
+<app-research-logs />
+<app-footer />

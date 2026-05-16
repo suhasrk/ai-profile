@@ -1,0 +1,53 @@
+:host {
+  display: block;
+}
+
+.tab-container {
+  display: flex;
+  justify-content: center;
+  padding: 60px 24px 0;
+  background: #0a0a0a;
+}
+
+.tab-toggle {
+  display: flex;
+  background: #111111;
+  border: 1px solid #222222;
+  border-radius: 8px;
+  padding: 4px;
+  gap: 4px;
+}
+
+.tab-btn {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  color: #666666;
+  background: transparent;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tab-btn:hover {
+  color: #aaaaaa;
+}
+
+.tab-btn.active {
+  color: #00f0ff;
+  background: rgba(0, 240, 255, 0.08);
+  text-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
+}
+
+@media (max-width: 768px) {
+  .tab-container {
+    padding: 40px 20px 0;
+  }
+
+  .tab-btn {
+    font-size: 0.65rem;
+    padding: 10px 16px;
+  }
+}

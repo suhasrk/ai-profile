@@ -1,0 +1,119 @@
+.logs-section {
+  padding: 120px 24px;
+  background: var(--color-bg-secondary);
+}
+
+.logs-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.logs-header {
+  margin-bottom: 60px;
+}
+
+.logs-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.log-entry {
+  display: flex;
+  gap: 20px;
+  padding: 24px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  transition: border-color 0.3s ease;
+  cursor: pointer;
+  opacity: 0;
+}
+
+.log-entry:last-child {
+  border-bottom: none;
+}
+
+.log-glow-bar {
+  width: 2px;
+  min-height: 100%;
+  background: rgba(0, 240, 255, 0.1);
+  flex-shrink: 0;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 2px;
+}
+
+.log-entry:hover .log-glow-bar {
+  background: var(--color-neon-cyan);
+  box-shadow: 0 0 12px rgba(0, 240, 255, 0.3);
+}
+
+.log-content {
+  flex: 1;
+}
+
+.log-category {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  color: var(--color-neon-cyan);
+  opacity: 0.6;
+  margin-bottom: 6px;
+}
+
+.log-title {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 6px;
+  line-height: 1.4;
+  transition: color 0.3s;
+}
+
+.log-entry:hover .log-title {
+  color: var(--color-neon-cyan);
+}
+
+.log-description {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--color-text-secondary);
+  margin-bottom: 12px;
+}
+
+.log-footer {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.log-reading-time {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--color-text-dim);
+}
+
+.log-tags {
+  display: flex;
+  gap: 6px;
+}
+
+.log-tag {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  padding: 2px 8px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 3px;
+  color: var(--color-text-dim);
+}
+
+.log-entry:hover .log-tag {
+  border-color: rgba(0, 240, 255, 0.15);
+  color: var(--color-text-secondary);
+}
+
+@media (max-width: 768px) {
+  .logs-section {
+    padding: 80px 20px;
+  }
+}

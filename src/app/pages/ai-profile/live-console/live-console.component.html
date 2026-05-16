@@ -1,0 +1,28 @@
+<section class="console-section">
+  <div class="console-container">
+    <div class="console-header">
+      <span class="section-label">Live Feed</span>
+      <h2 class="section-title">AI CONSOLE</h2>
+    </div>
+
+    <div class="console-terminal">
+      <div class="terminal-bar">
+        <div class="term-dot term-dot-red"></div>
+        <div class="term-dot term-dot-yellow"></div>
+        <div class="term-dot term-dot-green"></div>
+        <span class="term-title">ai-agent@system:~$</span>
+      </div>
+      <div class="terminal-body">
+        @for (line of lines; track line + '-' + $index + '-' + cycleCount) {
+          <div class="terminal-line" [class.terminal-anomaly]="line.includes('anomaly')" [class.terminal-success]="line.includes('complete') || line.includes('OPERATIONAL')">
+            @if (line.startsWith('>')) {
+              <span class="line-prompt">></span>
+            }
+            <span class="line-content">{{ line }}</span>
+          </div>
+        }
+        <div class="terminal-cursor"></div>
+      </div>
+    </div>
+  </div>
+</section>

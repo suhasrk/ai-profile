@@ -1,0 +1,136 @@
+.console-section {
+  padding: 120px 24px;
+  background: var(--color-bg-secondary);
+}
+
+.console-container {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.console-header {
+  margin-bottom: 40px;
+}
+
+.console-terminal {
+  background: rgba(0, 0, 0, 0.95);
+  border: 1px solid rgba(0, 240, 255, 0.12);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.terminal-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.02);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.term-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.term-dot-red {
+  background: #ff5f56;
+}
+
+.term-dot-yellow {
+  background: #ffbd2e;
+}
+
+.term-dot-green {
+  background: #27c93f;
+}
+
+.term-title {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--color-text-dim);
+  margin-left: 8px;
+}
+
+.terminal-body {
+  padding: 20px;
+  min-height: 300px;
+  max-height: 400px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.terminal-line {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+  display: flex;
+  gap: 8px;
+  opacity: 0;
+  animation: fadeInLine 0.3s ease forwards;
+}
+
+.line-prompt {
+  color: var(--color-neon-cyan);
+  opacity: 0.5;
+}
+
+.terminal-anomaly {
+  color: #ff6b6b;
+}
+
+.terminal-anomaly .line-prompt {
+  color: #ff6b6b;
+  opacity: 0.7;
+}
+
+.terminal-success {
+  color: var(--color-neon-green);
+}
+
+.terminal-success .line-prompt {
+  color: var(--color-neon-green);
+  opacity: 0.7;
+}
+
+.terminal-cursor {
+  width: 8px;
+  height: 16px;
+  background: var(--color-neon-cyan);
+  animation: blink 1s step-end infinite;
+  margin-top: 4px;
+}
+
+@keyframes fadeInLine {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .console-section {
+    padding: 80px 20px;
+  }
+
+  .terminal-body {
+    padding: 16px;
+    min-height: 250px;
+  }
+
+  .terminal-line {
+    font-size: 0.75rem;
+  }
+}

@@ -1,0 +1,71 @@
+<section class="projects-section">
+  <div class="projects-container">
+    <div class="projects-header">
+      <span class="section-label">Classified Projects</span>
+      <h2 class="section-title">AI ENGINEERING<br />DOSSIERS</h2>
+    </div>
+
+    <div class="projects-timeline">
+      @for (project of projects; track project.id; let i = $index) {
+        <div class="project-entry" [class.expanded]="expandedIndex === i">
+          <div class="timeline-line">
+            <div class="timeline-dot" [class.dot-active]="project.status === 'ACTIVE'"></div>
+            <div class="timeline-connector" *ngIf="i < projects.length - 1"></div>
+          </div>
+
+          <div class="project-card" (click)="toggleProject(i)">
+            <div class="project-dossier-header">
+              <div class="project-meta">
+                <span class="project-id">{{ project.id }}</span>
+                <span class="project-status" [class.status-active]="project.status === 'ACTIVE'" [class.status-dev]="project.status === 'IN DEVELOPMENT'">
+                  {{ project.status }}
+                </span>
+              </div>
+              <div class="project-expand-icon">{{ expandedIndex === i ? '−' : '+' }}</div>
+            </div>
+
+            <h3 class="project-title">{{ project.title }}</h3>
+
+            <div class="project-body" [class.body-visible]="expandedIndex === i">
+              <div class="project-section">
+                <div class="project-section-label">PROBLEM</div>
+                <p class="project-section-text">{{ project.problem }}</p>
+              </div>
+
+              <div class="project-section">
+                <div class="project-section-label">ARCHITECTURE</div>
+                <div class="project-arch-flow">
+                  @for (step of project.architecture.split(' → '); track step) {
+                    <span class="arch-step">{{ step }}</span>
+                    @if (!$last) {
+                      <span class="arch-arrow">→</span>
+                    }
+                  }
+                </div>
+              </div>
+
+              <div class="project-section">
+                <div class="project-section-label">AI FLOW</div>
+                <p class="project-section-text">{{ project.aiFlow }}</p>
+              </div>
+
+              <div class="project-section">
+                <div class="project-section-label">TECH STACK</div>
+                <div class="project-tags">
+                  @for (tag of project.techStack; track tag) {
+                    <span class="project-tag">{{ tag }}</span>
+                  }
+                </div>
+              </div>
+
+              <div class="project-section">
+                <div class="project-section-label">IMPACT</div>
+                <p class="project-section-text project-impact">{{ project.impact }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
