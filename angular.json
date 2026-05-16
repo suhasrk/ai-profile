@@ -39,6 +39,10 @@
         "build": {
           "builder": "@angular/build:application",
           "options": {
+            "outputPath": {
+              "base": "docs",
+              "browser": "."
+            },
             "browser": "src/main.ts",
             "polyfills": [
               "zone.js"
@@ -57,6 +61,7 @@
           },
           "configurations": {
             "production": {
+              "baseHref": "/ai-profile/",
               "budgets": [
                 {
                   "type": "initial",
